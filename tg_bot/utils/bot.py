@@ -5,18 +5,12 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.dispatcher import Dispatcher
 from aiogram.dispatcher.webhook import SendMessage
 from aiogram.utils.executor import start_webhook
+from tg_bot.utils.bot_config import API_TOKEN, WEBHOOK_URL
 
-
-API_TOKEN = 'BOT_TOKEN_HERE'
-
-# webhook settings
-WEBHOOK_HOST = 'https://your.domain'
-WEBHOOK_PATH = '/path/to/api'
-WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 # webserver settings
-WEBAPP_HOST = 'localhost'  # or ip
-WEBAPP_PORT = 3001
+WEBAPP_HOST = 'http://alferon15.pythonanywhere.com'  # or ip
+WEBAPP_PORT = 80
 
 logging.basicConfig(
     filename='debug.log',
@@ -62,7 +56,7 @@ async def on_shutdown(dp):
 if __name__ == '__main__':
     start_webhook(
         dispatcher=dp,
-        webhook_path=WEBHOOK_PATH,
+        webhook_path=WEBHOOK_URL,
         on_startup=on_startup,
         on_shutdown=on_shutdown,
         skip_updates=True,
