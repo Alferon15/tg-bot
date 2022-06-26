@@ -25,7 +25,7 @@ dp.middleware.setup(LoggingMiddleware())
 
 
 @dp.message_handler()
-async def echo(message: types.Message):
+async def bot_echo(message: types.Message):
     # Regular request
     # await bot.send_message(message.chat.id, message.text)
 
