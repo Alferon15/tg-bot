@@ -23,6 +23,11 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 dp.middleware.setup(LoggingMiddleware())
 
+@dp.message_handler(commands=['test','start'])
+async def process_start_command(message: types.Message):
+    await bot.send_message(message.from_user.id, "test message") #like this
+    #await message.answer("test message") 
+    #or like this
 
 @dp.message_handler()
 async def bot_echo(message: types.Message):
