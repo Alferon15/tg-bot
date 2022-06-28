@@ -14,5 +14,5 @@ class WebhookProcess(View):
         return JsonResponse({"ok": "Get request received! But nothing done"})
     def post(self, request, *args, **kwargs):
         logging.info('webhook_process!!!')
-        process_webhook(request)
+        process_webhook(request.body)
         return JsonResponse({"ok": "POST request processed"})
