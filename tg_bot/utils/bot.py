@@ -37,6 +37,10 @@ async def bot_echo(message: types.Message):
     # or reply INTO webhook
     return SendMessage(message.chat.id, message.text)
 
+@dp.message_handler()
+async def bot_to_admin():
+    return SendMessage(100204219, 'bot_to_admin')
+
 
 async def on_startup(dp):
     await bot.set_webhook(WEBHOOK_URL)
