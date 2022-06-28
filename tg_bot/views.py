@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, HttpResponse
 from tg_bot.utils.bot import bot
 from django.views.decorators.csrf import csrf_exempt
@@ -8,8 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 async def webhook_process(request):
     if request.method == "POST":
-        bot.send_message(100204219, 'webhook_process')
+        logging.warning('webhook_process!!!')
         print("Data received from Webhook is: ", request.body)
-        return HttpResponse('POST')
+        await bot.send_message(100204219, 'webhook_process')
     else:
         return HttpResponse('GET')
