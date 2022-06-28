@@ -13,5 +13,5 @@ telebot.logger.setLevel(logging.DEBUG)
 bot = telebot.TeleBot(API_TOKEN, parse_mode=None)
 
 
-def process_webhook():
-    bot.send_message(admin_id, 'process_webhook')
+def process_webhook(request):
+    bot.send_message(admin_id, request.result)
