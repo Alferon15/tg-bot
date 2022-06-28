@@ -13,6 +13,5 @@ class WebhookProcess(View):
         return JsonResponse({"ok": "Get request received! But nothing done"})
     def post(self, request, *args, **kwargs):
         logging.warning('webhook_process!!!')
-        print("Data received from Webhook is: ", request.body)
-        bot.send_message(100204219, 'webhook_process')
+        logging.warning(request.body)
         return JsonResponse({"ok": "POST request processed"})
