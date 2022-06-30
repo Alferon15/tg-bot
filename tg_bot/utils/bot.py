@@ -1,5 +1,6 @@
 import logging
 import telebot
+import json
 
 from tg_bot.utils.bot_config import API_TOKEN, admin_id
 
@@ -14,4 +15,6 @@ bot = telebot.TeleBot(API_TOKEN, parse_mode=None)
 
 
 def process_webhook(body):
+    json_obj = json.loads(body)
     bot.send_message(admin_id, body)
+    bot.send.message(admin_id, json_obj['message'])
