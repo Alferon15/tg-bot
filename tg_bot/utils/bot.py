@@ -16,5 +16,4 @@ bot = telebot.TeleBot(API_TOKEN, parse_mode=None)
 
 def process_webhook(body):
     json_obj = json.loads(body)
-    bot.send_message(admin_id, body)
-    bot.send.message(admin_id, json_obj['message'])
+    bot.send_message(admin_id, json_obj['message'])
