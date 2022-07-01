@@ -16,3 +16,5 @@ def process_webhook(body):
     update = types.Update.de_json(json_obj)
     bot.send_message(admin_id, update)
     bot.send_message(admin_id, update.message)
+    bot.send_message(admin_id, update.message.content_type)
+    bot.send_message(admin_id, update.message.from_user)
