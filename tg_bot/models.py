@@ -22,12 +22,12 @@ class Printers(models.Model):
     class Meta:
         pass
     
-    printer_name = models.CharField(max_lenght=100, help_text="")
+    printer_name = models.CharField(max_length==100, help_text="")
 
 
 class Cartridges(models.Model):
     class Meta:
         pass
     
-    cartridge_name = models.CharField(max_lenght=100, help_text="")
+    cartridge_name = models.CharField(max_length=100, help_text="")
     printers = models.ManyToManyField(Printers)
