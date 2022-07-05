@@ -16,9 +16,9 @@ def process_webhook(body):
     json_obj = body.decode('UTF-8')
     update = types.Update.de_json(json_obj)
     user_id = update.message.from_user
-    u = TGUser.objects.get_or_create(user_id)
-    if not u.is_trusted:
-        bot.send_message(user_id, 'Я тебя не знаю!')
+    u = TGUser.objects.get_or_create(tg_id=user_id)
+    if u.is_trusted:
+        bot.send_message(user_id, 'Я тебя знаю!')
     bot.send_message(admin_id, update)
     bot.send_message(admin_id, update.message)
     bot.send_message(admin_id, update.message.from_user)
