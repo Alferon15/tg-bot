@@ -82,9 +82,6 @@ DATABASES = {
         'USER': 'alferon15',
         'PASSWORD': 'N89fdZ15',
         'HOST': 'alferon15.mysql.pythonanywhere-services.com',
-    'default1': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
