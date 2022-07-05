@@ -3,7 +3,7 @@ import telebot
 
 from telebot import types
 from tg_bot.utils.bot_config import API_TOKEN, admin_id
-from models import TGUser
+from tg_bot.models import TGUser
 
 
 logger = telebot.logger
