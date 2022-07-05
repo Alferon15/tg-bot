@@ -22,7 +22,7 @@ class Printers(models.Model):
     class Meta:
         pass
     
-    printer_name = models.CharField(max_length==100, help_text="")
+    printer_name = models.CharField(max_length=100, help_text="")
 
 
 class Cartridges(models.Model):
