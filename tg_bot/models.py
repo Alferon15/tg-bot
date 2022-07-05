@@ -6,7 +6,7 @@ class TGUser(models.Model):
         ordering = ["user_name"]
     
     tg_id = models.IntegerField()
-    ally = models.BooleanField()
+    is_trusted = models.BooleanField(default=False)
     user_name = models.CharField(max_length=50, help_text="Enter user name")
     
     
