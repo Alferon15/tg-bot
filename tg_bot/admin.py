@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tg_bot.models import TGUser, Printers, Cartridges
+from tg_bot.models import TGUser, Printer, Cartridge
 
 # Register your models here.
 @admin.register(TGUser)
@@ -7,11 +7,11 @@ class TGUserAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Printers)
-class PrintersAdmin(admin.ModelAdmin):
+@admin.register(Printer)
+class PrinterAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Cartridges)
-class CartridgesAdmin(admin.ModelAdmin):
+@admin.register(Cartridge)
+class CartridgeAdmin(admin.ModelAdmin):
     pass

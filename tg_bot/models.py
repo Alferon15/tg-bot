@@ -18,16 +18,16 @@ class TGUser(models.Model):
         return self.field_name
     
     
-class Printers(models.Model):
+class Printer(models.Model):
     class Meta:
         pass
     
     printer_name = models.CharField(max_length=100, help_text="")
 
 
-class Cartridges(models.Model):
+class Cartridge(models.Model):
     class Meta:
         pass
     
     cartridge_name = models.CharField(max_length=100, help_text="")
-    printers = models.ManyToManyField(Printers)
+    printers = models.ManyToManyField(Printer)
