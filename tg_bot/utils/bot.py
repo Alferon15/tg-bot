@@ -15,10 +15,8 @@ bot = telebot.TeleBot(API_TOKEN, parse_mode=None)
 def process_webhook(body):
     json_obj = body.decode('UTF-8')
     update = types.Update.de_json(json_obj)
-    user_id = update.message.from_user
+    user_id = update.message.from_user.id
     u = TGUser.objects.get_or_create(tg_id=user_id)
     if u.is_trusted:
-        bot.send_message(user_id, 'Я тебя знаю!')
-    bot.send_message(admin_id, update)
+        bot.send_message(user_id, 'Я тебя знаю!' if u.is_trusted else 'Я тебя не знаю!')
     bot.send_message(admin_id, update.message)
-    bot.send_message(admin_id, update.message.from_user)
