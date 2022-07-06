@@ -8,7 +8,7 @@ class TGUser(models.Model):
     
     tg_id = models.IntegerField(unique=True, primary_key=True)
     is_trusted = models.BooleanField(default=False)
-    user_name = models.CharField(max_length=50, help_text="Enter user name")
+    user_name = models.CharField(max_length=50, help_text="Enter user name", blank=True)
     
 
     def __str__(self):
