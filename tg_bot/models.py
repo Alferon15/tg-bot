@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class TGUser(models.Model):
     class Meta:
-        ordering = ["user_name"]
+        ordering = ["tg_id"]
     
     tg_id = models.IntegerField()
     is_trusted = models.BooleanField(default=False)
@@ -12,7 +12,7 @@ class TGUser(models.Model):
     
 
     def __str__(self):
-        return self.user_name
+        return self.tg_id
     
     
 class Printer(models.Model):
