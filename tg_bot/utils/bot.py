@@ -18,10 +18,9 @@ def process_webhook(body):
     update = types.Update.de_json(json_obj)
     userid = update.message.from_user.id
     username = update.message.from_user.username
-    u, created = TGUser.objects.get_or_create(tg_id=userid, user_name=username)
+    u, created = TGUser.objects.get_or_create(pk=userid)
+    u.user_name = username
     if created:
-        bot.send_message(userid, 'Привет новичок!')
-    else:
-        bot.send_message(userid, 'Привет старичок!')
-    bot.send_message(userid, 'Я тебя знаю!' if u.is_trusted else 'Я тебя не знаю!')
+        bot.send_message(userid, 'Я добавил тебя в свой список!')
+    bot.send_message(userid, 'Тебе можно доверять!' if u.is_trusted else 'Я тебя не знаю!')
     bot.send_message(admin_id, update.message)

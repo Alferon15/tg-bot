@@ -6,7 +6,7 @@ class TGUser(models.Model):
     class Meta:
         ordering = ["tg_id"]
     
-    tg_id = models.IntegerField()
+    tg_id = models.IntegerField(unique=True, primary_key=True)
     is_trusted = models.BooleanField(default=False)
     user_name = models.CharField(max_length=50, help_text="Enter user name")
     
