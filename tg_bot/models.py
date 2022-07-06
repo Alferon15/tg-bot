@@ -12,7 +12,7 @@ class TGUser(models.Model):
     
 
     def __str__(self):
-        return self.tg_id
+        return f'{self.tg_id}'
     
     
 class Printer(models.Model):
