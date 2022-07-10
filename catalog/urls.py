@@ -16,7 +16,7 @@ Including another URLconf
 from django.urls import path
 from catalog.views import AllGoodsView
 
-name_app = 'catalog'
+app_name = 'catalog'
 
 urlpatterns = [
     path('', AllGoodsView.as_view())
