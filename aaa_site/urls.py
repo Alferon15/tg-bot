@@ -19,8 +19,8 @@ from tg_bot.utils.bot_config import SECRET
 from django.urls.conf import include
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('base_app.urls'), name='base_app'),
-    path('catalog', include('catalog.urls'), name='catalog'),
+    path('catalog/', include('catalog.urls'), name='catalog'),
     path(f'{SECRET}', include('tg_bot.urls'), name='tg_bot'),
 ]
