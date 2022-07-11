@@ -20,7 +20,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('base_app.urls'), name='base_app'),
-    path('catalog/', include('catalog.urls'), name='catalog'),
-    path(f'{SECRET}', include('tg_bot.urls'), name='tg_bot'),
+    path('', include('base_app.urls')),
+    path('catalog/', include('catalog.urls')),
+    path(f'{SECRET}', include('tg_bot.urls')),
 ]
