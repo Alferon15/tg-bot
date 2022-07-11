@@ -1,7 +1,9 @@
 {% extends 'base_app/main.html' %}
 
 {% block body %}
-{% for good in Goods %}
-  <h1>%good%</h1></br>
+{% for good in object_list %}
+  <h1>{{ good.name }}</h1>
+  <h2>{{ good.caption }}</h2>
+  </br>
 {% endfor %}
 {% endblock body %}
