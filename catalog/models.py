@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+class Good(models.Model):
+    name = models.TextField(verbose_name='Наменование товара', )
