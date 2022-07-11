@@ -1,4 +1,4 @@
-from models import Good
+from catalog.models import Good
 from django.views.generic import TemplateView, ListView, DetailView
 
 
