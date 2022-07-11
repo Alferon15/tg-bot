@@ -12,3 +12,8 @@ class AllGoodsView(ListView):
 
     model = Good
     template_name = "catalog/all_goods.html"
+
+
+class DetailGoodsView(DetailView):
+    model = Good
+    template_name = "catalog/detail_goods.html"
