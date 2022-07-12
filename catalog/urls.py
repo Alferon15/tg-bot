@@ -21,5 +21,5 @@ app_name = 'catalog'
 urlpatterns = [
     path('', HomeGoodsView.as_view(), name='home'),
     path('all/', AllGoodsView.as_view(), name='all'),
-    path('good/', DetailGoodsView.as_view(), name='detail'),
+    path('good/<int:pk>/', DetailGoodsView.as_view(), name='detail'),
 ]
