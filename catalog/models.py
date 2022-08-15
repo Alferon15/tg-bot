@@ -18,7 +18,5 @@ class Good(models.Model):
         return self.name
 
 
-    def picture_tag(self):
+    def image(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.picture.url))
-        
-    picture_tag.short_description = 'Image'
