@@ -1,6 +1,7 @@
 from statistics import mode
 from django.db import models
 from django.shortcuts import reverse
+from django.utils.safestring import mark_safe
 
 class Good(models.Model):
     name = models.TextField(verbose_name='Наименование товара')
@@ -15,3 +16,8 @@ class Good(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    def image_tag(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.picture.url))
+    image_tag.short_description = 'image'
