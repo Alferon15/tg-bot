@@ -25,4 +25,6 @@ urlpatterns = [
     path('', HomeGoodsView.as_view(), name='home'),
     path('all/', AllGoodsView.as_view(), name='all'),
     path('good/<int:pk>/', DetailGoodsView.as_view(), name='detail'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
