@@ -7,9 +7,9 @@ Detail Good!
 {% block body %}
 
   <div class="jumbotron">
-    <h1 class="display-12">{{ object.name }}</h1>
+    <h1 class="display-12"></h1>
     <p class="lead">{{ object.caption }}</p>
-    <img class="img-fluid" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+    <img class="img-fluid" src="{{ object.picture }}" alt="{{ object.name }}" />
     <hr class="my-12">
     <p>{{ object.cost }}</p>
     <p class="lead">
