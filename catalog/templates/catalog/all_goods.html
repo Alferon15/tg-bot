@@ -10,7 +10,7 @@ All Goods!
       <div class="col-xxl-6 mb-5">
         <div class="card h-100">
             <!-- Product image-->
-            <img class="card-img-top" src="{{ object.picture }}" alt="{{ object.name }}" />
+            <img class="card-img-top" src={% if good.picture %}"{{good.picture.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
             <!-- Product details-->
             <div class="card-body p-4">
                 <div class="text-center">
