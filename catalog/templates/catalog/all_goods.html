@@ -7,7 +7,7 @@
 {% block body %}
   <div class="row">
     {% for good in object_list %}
-      <div class="col-md-6 mb-5">
+      <div class="col-6 col-md-4 mb-5">
         <div class="card h-100">
             <!-- Product image-->
             <img class="card-img-top" src={% if good.picture %}"{{good.picture.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />

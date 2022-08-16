@@ -6,9 +6,9 @@
 
 {% block body %}
   <div class="row">
-    <div class="jumbotron col-6 center">
+    <div class="jumbotron col-6">
       <h1 class="display-10"></h1>
-      <p class="lead">{{ good.caption }}</p>
+      <p class="lead">{{ good.name }}</p>
       <img class="img-fluid" src={% if good.picture %}"{{good.picture.url}}"{% else %}""{% endif %} alt="{{ object.name }}" />
       <hr class="my-12">
       <p>Цена : {{ good.cost }} руб.</p>
