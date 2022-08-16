@@ -20,7 +20,7 @@ class GoodImage(models.Model):
     image = models.ImageField(verbose_name='Изображение товара', upload_to='good_images/', blank=True, null=True)
 
     def image_pucture(self):
-        return mark_safe('<img src="{}" height="50"/>'.format(self.picture.url))
+        return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
 
     def good(self):
         return self.good.__str__
