@@ -1,5 +1,3 @@
-from statistics import mode
-from typing_extensions import Required
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.safestring import mark_safe
