@@ -4,13 +4,13 @@ from catalog.models import Good, GoodImage
 # Register your models here.
 @admin.register(Good)
 class GoodAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'cost')
-    list_display_links = ('id', 'name')
+    list_display = ['id', 'name', 'cost']
+    list_display_links = ['id', 'name']
 
 
 @admin.register(GoodImage)
 class GoodImageAdmin(admin.ModelAdmin):
-    list_display = ('image')
+    list_display = ['image']
 
 
 class GoodImageInline(admin.TabularInline):
