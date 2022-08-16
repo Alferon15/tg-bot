@@ -8,6 +8,11 @@ class GoodAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'name')
 
 
+@admin.register(GoodImage)
+class GoodImageAdmin(admin.ModelAdmin):
+    list_display = ('image')
+
+
 class GoodImageInline(admin.TabularInline):
     model = GoodImage
     extra = 3
