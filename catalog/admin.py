@@ -4,7 +4,7 @@ from catalog.models import Good, GoodImage
 # Register your models here.
 @admin.register(Good)
 class GoodAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'images', 'cost']
+    list_display = ['id', 'name', 'cost']
     list_display_links = ['id', 'name']
 
 
