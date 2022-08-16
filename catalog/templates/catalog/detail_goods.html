@@ -5,16 +5,16 @@
 {% endblock title %}
 
 {% block body %}
-
-  <div class="jumbotron md-10">
-    <h1 class="display-10"></h1>
-    <p class="lead">{{ good.caption }}</p>
-    <img class="img-fluid" src={% if good.picture %}"{{good.picture.url}}"{% else %}""{% endif %} alt="{{ object.name }}" />
-    <hr class="my-12">
-    <p>Цена : {{ good.cost }} руб.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Купить</a>
-    </p>
+  <div class="row">
+    <div class="jumbotron col-6 center">
+      <h1 class="display-10"></h1>
+      <p class="lead">{{ good.caption }}</p>
+      <img class="img-fluid" src={% if good.picture %}"{{good.picture.url}}"{% else %}""{% endif %} alt="{{ object.name }}" />
+      <hr class="my-12">
+      <p>Цена : {{ good.cost }} руб.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Купить</a>
+      </p>
+    </div>
   </div>
-
 {% endblock body %}
