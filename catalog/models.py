@@ -22,5 +22,5 @@ class Good(models.Model):
 
 
 class GoodImage(models.Model):
-    good = models.ForeignKey(Good, related_name='images')
+    good = models.ForeignKey(Good, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(verbose_name='Изображение товара', upload_to='good_images/', blank=True, null=True)
