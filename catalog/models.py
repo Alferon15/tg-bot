@@ -1,4 +1,5 @@
 from statistics import mode
+from typing_extensions import Required
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.safestring import mark_safe
@@ -23,4 +24,5 @@ class Good(models.Model):
 
 class GoodImage(models.Model):
     good = models.ForeignKey(Good, related_name='images', on_delete=models.CASCADE)
+    number = models.IntegerField(verbose_name='Номер изображения', blank=False, null=False, unique=True)
     image = models.ImageField(verbose_name='Изображение товара', upload_to='good_images/', blank=True, null=True)
