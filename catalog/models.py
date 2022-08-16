@@ -13,14 +13,14 @@ class Good(models.Model):
     def __str__(self):
         return self.name
 
-    def image(self):
-        return mark_safe('<img src="{}" height="50"/>'.format(self.picture.url))
-
 
 class GoodImage(models.Model):
     good = models.ForeignKey(Good, related_name='images', on_delete=models.CASCADE)
     number = models.IntegerField(verbose_name='Номер изображения', blank=False, null=False)
     image = models.ImageField(verbose_name='Изображение товара', upload_to='good_images/', blank=True, null=True)
 
+    def image_pucture(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.picture.url))
+
     def good(self):
-        return self.good.name
+        return self.good.__str__

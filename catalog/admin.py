@@ -10,7 +10,7 @@ class GoodAdmin(admin.ModelAdmin):
 
 @admin.register(GoodImage)
 class GoodImageAdmin(admin.ModelAdmin):
-    list_display = ['good', 'number', 'image']
+    list_display = ['good', 'number', 'image_pucture']
 
 
 class GoodImageInline(admin.TabularInline):
