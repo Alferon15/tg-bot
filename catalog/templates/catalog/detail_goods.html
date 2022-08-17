@@ -8,8 +8,9 @@
   <div class="row">
     <div class="jumbotron col-6">
       <h1 class="display-10"></h1>
-      <p class="lead">{{ good.name }} {{ good.images }} {{ good.images.all }} </p>
-      {% for i in good.images.all %}
+      <p class="lead">{{ good.name }} {{ good.add_images.count }} {{ good.add_images.all }} </p>
+      <img class="card-img-top" src={% if good.image_main %}"{{good.image_main.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
+      {% for i in good.add_images.all %}
         <img class="card-img-top" src={% if i %}"{{i.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
       {% endfor %}
       <hr class="my-12">
