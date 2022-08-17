@@ -20,5 +20,5 @@ class DetailGoodsView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['images'] = GoodImage.objects.all()
+        context['images'] = Good.objects.images.all()
         return context
