@@ -1,7 +1,7 @@
 {% extends 'base_app/main.html' %}
 
 {% block title%}
-{{ object.name }}
+  {{ object.name }}
 {% endblock title %}
 
 {% block body %}
@@ -9,7 +9,7 @@
     <div class="jumbotron col-6">
       <h1 class="display-10"></h1>
       <p class="lead">{{ good.name }}</p>
-      {% for i in good.images.all %}
+      {% for i in images %}
         <img class="img-fluid" src={% if i.image %}"{{i.image.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
       {% endfor %}
       <hr class="my-12">
