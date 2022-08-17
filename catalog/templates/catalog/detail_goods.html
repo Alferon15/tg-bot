@@ -10,7 +10,7 @@
       <h1 class="display-10"></h1>
       <p class="lead">{{ good.name }}</p>
       {% for i in good.images.all %}
-        <img class="img-fluid" src={% if i.image %}"{{i.image.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
+        <img class="img-fluid" src="{{i.image.url}}" alt="{{ good.name }}" />
       {% endfor %}
       <hr class="my-12">
       <p>Цена : {{ good.cost }} руб.</p>
