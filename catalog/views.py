@@ -17,8 +17,3 @@ class AllGoodsView(ListView):
 class DetailGoodsView(DetailView):
     model = Good
     template_name = "catalog/detail_goods.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['images'] = Good.objects.select_related(self.id).all()
-        return context

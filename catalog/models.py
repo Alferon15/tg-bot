@@ -23,4 +23,4 @@ class GoodImage(models.Model):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
 
     def good(self):
-        return self.good.__str__
+        return self.good.__name__
