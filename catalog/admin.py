@@ -18,8 +18,5 @@ class GoodAdmin(admin.ModelAdmin):
 
 @admin.register(GoodImage)
 class GoodImageAdmin(admin.ModelAdmin):
-    class Meta:
-        model = GoodImage
-    
+    list_display = ['image_pucture']
     inlines = [GoodImageInline]
-    list_display = ['number', 'image_pucture']
