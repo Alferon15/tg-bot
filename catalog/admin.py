@@ -18,4 +18,4 @@ class GoodAdmin(admin.ModelAdmin):
 
 @admin.register(GoodImage)
 class GoodImageAdmin(admin.ModelAdmin):
-    list_display = ['image_pucture']
+    list_display = ['good', 'image_picture']
