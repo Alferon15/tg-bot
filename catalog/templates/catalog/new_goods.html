@@ -1,0 +1,32 @@
+{% extends 'base_app/main.html' %}
+
+{% block title%}
+Все броши
+{% endblock title %}
+
+{% block body %}
+  <h1>Новинки!</h1>
+  <div class="row">
+    {% for good in object_list %}
+      <div class="col-6 col-md-4 mb-5">
+        <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" src={% if good.image_main %}"{{good.image_main.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{ good.name }}</h5>
+                    <!-- Product price-->
+                    Цена : {{ good.cost }} руб.
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ good.get_absolute_url }}">Купить</a></div>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock body %}

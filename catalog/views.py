@@ -1,3 +1,4 @@
+from itertools import count
 from catalog.models import Good, GoodImage
 from django.views.generic import TemplateView, ListView, DetailView
 
@@ -12,6 +13,16 @@ class AllGoodsView(ListView):
 
     model = Good
     template_name = "catalog/all_goods.html"
+
+
+class NewGoodsView(ListView):
+    class Meta:
+        ordering = ['-id']
+        count = 6
+
+    model = Good
+    template_name = "catalog/new_goods.html"
+
 
 
 class DetailGoodsView(DetailView):
