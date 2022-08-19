@@ -1,4 +1,3 @@
-from itertools import count
 from catalog.models import Good, GoodImage
 from django.views.generic import TemplateView, ListView, DetailView
 
@@ -21,8 +20,7 @@ class NewGoodsView(ListView):
 
     model = Good
     template_name = "catalog/new_goods.html"
-    queryset = Good.objects[:6]
-
+    queryset = Good.objects.all[:6]
 
 
 class DetailGoodsView(DetailView):
