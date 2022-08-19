@@ -21,7 +21,7 @@ class NewGoodsView(ListView):
 
     model = Good
     template_name = "catalog/new_goods.html"
-    queryset = Good.objects.order_by('-id')[:3]
+    queryset = Good.objects[:6]
 
 
 
