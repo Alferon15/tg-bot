@@ -16,7 +16,7 @@ class AllGoodsView(ListView):
 
 class NewGoodsView(ListView):
     class Meta:
-        ordering = ['id']
+        ordering = ['-id']
 
     model = Good
     template_name = "catalog/new_goods.html"
