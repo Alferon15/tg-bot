@@ -16,11 +16,11 @@ class AllGoodsView(ListView):
 
 class NewGoodsView(ListView):
     class Meta:
-        ordering = ['-id']
+        ordering = ['id']
 
     model = Good
     template_name = "catalog/new_goods.html"
-    queryset = Good.objects.all()[:6]
+    queryset = Good.objects.all[:6]
 
 
 class DetailGoodsView(DetailView):
