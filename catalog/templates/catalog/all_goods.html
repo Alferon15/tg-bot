@@ -10,7 +10,7 @@
       <div class="col-6 col-md-4 mb-5">
         <div class="card h-100">
             <!-- Product image-->
-            <img class="card-img-top" src={% if good.image_main %}"{{good.image_main.url}}"{% else %}""{% endif %} alt="{{ good.name }}" />
+            <img class="card-img-top" src={% if good.image_main %}"{{good.image_main.url}}"{% else %}""{% endif %} href="{{ good.get_absolute_url }} alt="{{ good.name }}" />
             <!-- Product details-->
             <div class="card-body p-4">
                 
@@ -23,7 +23,6 @@
                 <!-- Product price-->
               Цена : {{ good.cost }} руб.
               </div>
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ good.get_absolute_url }}">Подробнее</a></div>
             </div>
         </div>
       </div>
